@@ -1,3 +1,4 @@
+# seaching ch11
 import operator
 import random
 
@@ -19,6 +20,7 @@ def find_kth_largest(k, a):
         while left <= right:
             pivot_idx = random.randint(left, right)
             new_pivot_idx = partition_around_pivot(left, right, pivot_idx)
+            # if there are exactly k-1 elements greater than the pivot then the pivot must be the kth largest element
             if new_pivot_idx == k - 1:
                 return a[new_pivot_idx]
             elif new_pivot_idx > k - 1:
